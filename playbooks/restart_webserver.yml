@@ -1,0 +1,26 @@
+---
+- name: Site Down
+  hosts: webserver.prometheus.io.test
+  gather_facts: false
+  become: true
+
+  tasks:
+
+    - debug:
+        msg: "Website is down!"
+
+    - name: Replace website
+      copy:
+       remote_src: yes
+       src: /opt/index.html
+       dest: /var/www/html/
+       owner: apache
+       group: apache
+       mode: '0644'
+
+    - name: Restart service
+      service:
+       name: "httpd"
+       state: restarted
+       enabled: yes
+      register: restart
