@@ -1,6 +1,6 @@
 ---
 - name: Site Down
-  hosts: webserver01.ansible-automates.co.za
+  hosts: webservers
   gather_facts: false
   become: true
 
