@@ -5,7 +5,7 @@
   sources:
      - ansible.eda.url_check:
         urls:
-          - http://webserver01.ansible-automates.co.za
+          - http://webserver.ansible-automates.co.za
         delay: 10
 
 
