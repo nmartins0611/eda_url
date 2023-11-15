@@ -15,7 +15,7 @@
       condition: event.url_check.status == "down"
       action:
         run_job_template:
-          name: Restart_Webserver
+          name: "Redeploy Webservices"
           organization: Default
           retries: 1
           delay: 10
